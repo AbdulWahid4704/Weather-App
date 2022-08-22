@@ -14,16 +14,16 @@ struct ContentView: View {
         
         ZStack {
 
-            
-
             ScrollView {
 
                 Header()
 
                 MainDetailsView()
+                    .padding(.bottom, 30)
 
+                TimeListView()
+                
             }
-
 
         }
         .background(

@@ -34,7 +34,7 @@ struct MainDetailsView: View {
                     .font(Font.custom(Constants.MAIN_FONT, size: 24))
                 
                 Text("Feels like 26°")
-                    .font(Font.custom(Constants.MAIN_FONT_LIGHT, size: 12))
+                    .font(Font.custom(Constants.MAIN_FONT_LIGHT, size: 14))
                     
                 
                 

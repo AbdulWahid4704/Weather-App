@@ -21,6 +21,7 @@ struct Header: View {
             
         }
         .padding()
+        .padding(.horizontal, 30)
         .font(Font.custom(Constants.MAIN_FONT, size: 22))
         .foregroundColor(.white)
         
