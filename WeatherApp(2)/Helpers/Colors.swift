@@ -11,6 +11,6 @@ import SwiftUI
 extension Color {
     
     static let BLUE_GRADIENT_TOP = Color(red: 74/255, green: 139/255, blue: 217/255)
-    static let BLUE_GRADIENT_BOTTOM = Color(red: 54/255, green: 70/255, blue: 153/255)
+    static let BLUE_GRADIENT_BOTTOM = Color(red: 70/255, green: 86/255, blue: 167/255)
     
 }

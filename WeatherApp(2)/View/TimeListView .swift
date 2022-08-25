@@ -21,7 +21,7 @@ struct TimeListView: View {
             
             CustomDivider()
             
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 
                 HStack(spacing: 35) {
                     

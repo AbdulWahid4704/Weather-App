@@ -9,12 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+    
     var body: some View {
-        
-        
-        ZStack {
 
-            ScrollView {
+        ScrollView(showsIndicators: false) {
 
                 Header()
 
@@ -25,9 +23,9 @@ struct ContentView: View {
                 
                 WeekListView()
                 
+                ExtraDetailsView()
+                
             }
-
-        }
         .background(
             
             // Background Gradient
