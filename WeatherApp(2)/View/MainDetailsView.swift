@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainDetailsView: View {
     
+    @ObservedObject var preview : MainDetailPreview
+    
     var body: some View {
         
         HStack(alignment: .center, spacing: 0) {
@@ -16,28 +18,31 @@ struct MainDetailsView: View {
             // The Main Detials
             VStack(alignment: .leading) {
                 
+            // TODO: Fix the preview of location
+                
+                // City
                 Text("Dubai")
                     .font(Font.custom(Constants.MAIN_FONT, size: 24))
                     .padding(.bottom, 10)
                 
-                Text("28°")
+                // Temperature
+                Text(preview.temp)
                     .font(Font.custom(Constants.MAIN_FONT, size: 90))
                     .padding(.top, 30)
                     
-                
-                Text("▲ 30° ▼ 20°")
+                // Highlow
+                Text(preview.highLow)
                     .padding(.bottom, 30)
                     
-                    
-                Text("Sunny")
+                // Condition text
+                Text(preview.conditionText)
                     .padding(.top, 10)
                     .font(Font.custom(Constants.MAIN_FONT, size: 24))
                 
-                Text("Feels like 26°")
+                // feels like
+                Text(preview.feelsLike)
                     .font(Font.custom(Constants.MAIN_FONT_LIGHT, size: 14))
                     
-                
-                
                 
             }
             .padding(.vertical, 40)
@@ -70,8 +75,8 @@ struct MainDetailsView: View {
     }
 }
 
-struct MainDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainDetailsView().background(Color.orange)
-    }
-}
+//struct MainDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainDetailsView().background(Color.orange)
+//    }
+//}

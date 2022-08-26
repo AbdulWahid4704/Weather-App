@@ -19,7 +19,7 @@ struct ContentView: View {
 
                 Header(preview: HeaderPreview(currentDay: forecastDays[0]))
 
-                    MainDetailsView()
+                MainDetailsView(preview: MainDetailPreview(current: currentWeather, currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
                         .padding(.bottom, 30)
 
                     TimeListView()
