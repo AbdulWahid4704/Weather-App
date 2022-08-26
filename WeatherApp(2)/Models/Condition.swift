@@ -9,7 +9,7 @@ import Foundation
 
 struct Condition: Identifiable, Decodable {
     
-    var id = UUID()
+    var id: UUID? = UUID()
     
     var text: String
     var code: Int

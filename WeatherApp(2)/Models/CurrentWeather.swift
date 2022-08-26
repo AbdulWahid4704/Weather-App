@@ -9,7 +9,7 @@ import Foundation
 
 struct CurrentWeather: Decodable, Identifiable {
     
-    var id = UUID()
+    var id: UUID? = UUID()
     
     var tempC: Double
     var tempF: Double

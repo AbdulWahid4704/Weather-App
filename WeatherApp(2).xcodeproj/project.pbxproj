@@ -76,14 +76,14 @@
 		EA0C35B928B6667A0098ABC9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EA0C35C628B7783A0098ABC9 /* WeatherRequest.swift */,
+				EA0C35C828B778740098ABC9 /* Location.swift */,
 				EA0C35BA28B6700A0098ABC9 /* CurrentWeather.swift */,
 				EA0C35BC28B774A90098ABC9 /* Forecast.swift */,
+				EA0C35C428B778050098ABC9 /* Astro.swift */,
 				EA0C35BE28B775820098ABC9 /* ForecastDay.swift */,
 				EA0C35C028B777A30098ABC9 /* Day.swift */,
 				EA0C35C228B777E60098ABC9 /* Hour.swift */,
-				EA0C35C428B778050098ABC9 /* Astro.swift */,
-				EA0C35C628B7783A0098ABC9 /* WeatherRequest.swift */,
-				EA0C35C828B778740098ABC9 /* Location.swift */,
 				EA0C35D328B7CADB0098ABC9 /* Condition.swift */,
 			);
 			path = Models;

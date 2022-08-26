@@ -9,11 +9,11 @@ import Foundation
 
 struct Hour: Identifiable, Decodable {
     
-    var id = UUID()
+    var id: UUID? = UUID()
     
     var time: String
-    var tempC: String
-    var tempF: String
+    var tempC: Double
+    var tempF: Double
     
     enum CodingKeys: String, CodingKey {
             

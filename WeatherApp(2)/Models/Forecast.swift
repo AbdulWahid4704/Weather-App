@@ -9,7 +9,7 @@ import Foundation
 
 struct Forecast: Decodable, Identifiable {
     
-    var id = UUID()
+    var id: UUID? = UUID()
     
     var forecastDays: [ForecastDay]
     

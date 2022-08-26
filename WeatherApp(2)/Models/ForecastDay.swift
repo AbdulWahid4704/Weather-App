@@ -9,7 +9,7 @@ import Foundation
 
 struct ForecastDay: Decodable, Identifiable {
     
-    var id = UUID()
+    var id: UUID? = UUID()
     
     var day: Day
     var astro: Astro

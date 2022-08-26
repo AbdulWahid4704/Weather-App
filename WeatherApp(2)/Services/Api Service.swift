@@ -44,6 +44,8 @@ struct APIService {
             decoder.dateDecodingStrategy = dateDecodingStrategy
             decoder.keyDecodingStrategy = keyDecodingStrategy
             
+            print(data)
+            
             do {
                 
                 let decodedData = try decoder.decode(T.self, from: data)
@@ -55,7 +57,7 @@ struct APIService {
                 completion(.failure(.decodingError))
                 
                 print("Couldnt decode")
-                print(error.localizedDescription)
+                print(error)
             }
             
         }

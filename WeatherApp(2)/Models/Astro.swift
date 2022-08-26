@@ -9,7 +9,7 @@ import Foundation
 
 struct Astro: Identifiable, Decodable {
     
-    var id = UUID()
+    var id: UUID? = UUID()
     
     var sunrise: String
     var sunset: String

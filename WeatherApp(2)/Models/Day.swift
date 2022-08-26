@@ -9,12 +9,12 @@ import Foundation
 
 struct Day: Identifiable, Decodable {
     
-    var id = UUID()
+    var id: UUID? = UUID()
     
-    var maxTempC: String
-    var maxTempF: String
-    var minTempC: String
-    var minTempF: String
+    var maxTempC: Double
+    var maxTempF: Double
+    var minTempC: Double
+    var minTempF: Double
     
     var condition: Condition
     
