@@ -9,15 +9,23 @@ import SwiftUI
 
 struct Header: View {
     
+    @EnvironmentObject var weatherModel: WeatherModel
+    @StateObject var preview: HeaderPreview
+    
     var body: some View {
         
         HStack {
             
+            // TODO: Change so when flipping to f doesnt move the date
+            
             Image(systemName: "line.3.horizontal")
             Spacer()
-            Text("Mon, 16th July")
+            Text(preview.dateString)
             Spacer()
-            Text("°C")
+            Text(weatherModel.isCelsius ? "°C" : "°F")
+                .onTapGesture {
+                    weatherModel.isCelsius.toggle()
+                }
             
         }
         .padding()
@@ -28,11 +36,11 @@ struct Header: View {
     }
 }
 
-struct Header_Previews: PreviewProvider {
-    static var previews: some View {
-        Header()
-            .background(
-                Color.orange
-            )
-    }
-}
+//struct Header_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Header()
+//            .background(
+//                Color.orange
+//            )
+//    }
+//}

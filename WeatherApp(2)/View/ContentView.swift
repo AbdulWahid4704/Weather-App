@@ -9,29 +9,43 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @EnvironmentObject var weatherModel: WeatherModel
     
     var body: some View {
 
-        ScrollView(showsIndicators: false) {
-
-                Header()
-
-                MainDetailsView()
-                    .padding(.bottom, 30)
-
-                TimeListView()
-                
-                WeekListView()
-                
-                ExtraDetailsView()
-                
-            }
-        .background(
+        if let currentWeather = weatherModel.currentWeather, let forecastDays = weatherModel.forecastDays {
             
-            // Background Gradient
-            LinearGradient(colors: [.BLUE_GRADIENT_TOP, .BLUE_GRADIENT_BOTTOM], startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-        )
+            ScrollView(showsIndicators: false) {
+
+                Header(preview: HeaderPreview(currentDay: forecastDays[0]))
+
+                    MainDetailsView()
+                        .padding(.bottom, 30)
+
+                    TimeListView()
+                    
+                    WeekListView()
+                    
+                    ExtraDetailsView()
+                    
+                }
+            .background(
+                
+                // Background Gradient
+                LinearGradient(colors: [.BLUE_GRADIENT_TOP, .BLUE_GRADIENT_BOTTOM], startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+            )
+            
+        } else {
+            
+            Text("Error no weather")
+                .onAppear{
+                    weatherModel.getData()
+                }
+            
+        }
+        
+        
 
         
     }
