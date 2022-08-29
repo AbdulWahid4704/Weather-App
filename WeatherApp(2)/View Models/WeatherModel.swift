@@ -16,6 +16,7 @@ class WeatherModel: ObservableObject {
     
     func getData() {
         
+        // TODO: Customize the url according to spec
         let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=London&days=3&aqi=no&alerts=no")
         
             apiService.getJSON { (result: Result<WeatherRequest, APIError>) in

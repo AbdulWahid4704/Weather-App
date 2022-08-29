@@ -58,6 +58,7 @@ struct MainDetailsView: View {
                     .opacity(0.07)
                     .frame(width: 375, height: 375)
                 
+                // TODO: Fix the preview of the icon
                 Image(systemName: "sun.max")
                     .font(Font.system(size: 250))
                     .foregroundColor(.white)

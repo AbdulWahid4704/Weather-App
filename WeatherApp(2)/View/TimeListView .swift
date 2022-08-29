@@ -9,11 +9,7 @@ import SwiftUI
 
 struct TimeListView: View {
     
-    let path = Path.init { path in
-        
-        
-        
-    }
+    @ObservedObject var preview: HourListPreview
     
     var body: some View {
         
@@ -25,14 +21,17 @@ struct TimeListView: View {
                 
                 HStack(spacing: 35) {
                     
-                    ForEach(1..<10) { index in
+                    // TODO: Scroll to make the current hour appear first
+                    
+                    // Convert the dict into an array of hour,temp tuple values so it becomes ordered
+                    ForEach(preview.hourTempDict.sorted(by: >), id: \.key) { (hour, temp) in
                         
                         VStack(spacing: 10) {
                             
-                            Text("Now")
+                            Text(hour)
                                 .font(.custom(Constants.MAIN_FONT_LIGHT, size: 12))
                             
-                            Text("28°")
+                            Text(temp)
                                 .font(.custom(Constants.MAIN_FONT, size: 18))
                             
                             
@@ -53,8 +52,8 @@ struct TimeListView: View {
     
 }
 
-struct TimeListView__Previews: PreviewProvider {
-    static var previews: some View {
-        TimeListView().background(.blue)
-    }
-}
+//struct TimeListView__Previews: PreviewProvider {
+//    static var previews: some View {
+//        TimeListView().background(.blue)
+//    }
+//}

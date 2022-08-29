@@ -12,6 +12,8 @@ struct ExtraDetailsView: View {
     private let startGradient = Color(red: 220/255, green: 220/255, blue: 220/255, opacity: 0.15)
     private let endGradient = Color(red: 220/255, green: 220/255, blue: 220/255, opacity: 0)
     
+    @ObservedObject var preview: ExtraDetailsPreview
+    
     var body: some View {
         
         ZStack {
@@ -20,18 +22,18 @@ struct ExtraDetailsView: View {
                 
                 VStack(alignment: .leading, spacing: 30) {
                     
-                    Tile(name: "Sunrise", value: "6:00 am")
-                    Tile(name: "Precipitation", value: "10%")
-                    Tile(name: "Wind Speed", value: "11 km/h")
+                    Tile(name: "Sunrise", value: preview.sunrise)
+                    Tile(name: "Precipitation", value: preview.percipitation)
+                    Tile(name: "Wind Speed", value: preview.windSpeed)
                     
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack(alignment: .leading, spacing: 30) {
                     
-                    Tile(name: " Sunset" , value: " 6:00 pm")
-                    Tile(name: " Humidity", value: " 42%")
-                    Tile(name: " Visibility", value: " 30 km")
+                    Tile(name: " Sunset" , value: " " + preview.sunset)
+                    Tile(name: " Humidity", value: " " + preview.humidity)
+                    Tile(name: " Visibility", value: " " + preview.visibilty)
                     
                     
                 }
@@ -76,8 +78,8 @@ struct Tile: View {
     
 }
 
-struct ExtraDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExtraDetailsView().background(.blue)
-    }
-}
+//struct ExtraDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExtraDetailsView().background(.blue)
+//    }
+//}

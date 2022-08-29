@@ -9,13 +9,16 @@ import SwiftUI
 
 struct WeekListView: View {
     
+    @State var forecastDays: [ForecastDay]
+    @EnvironmentObject var weatherModel: WeatherModel
+    
     var body: some View {
         
         VStack {
             
-            ForEach(1..<4) { index in
+            ForEach(forecastDays, id: \.id) { day in
                 
-                WeekListRow()
+                WeekListRow(preview: WeekListRowPreview(forecastDay: day, isCelsius: weatherModel.isCelsius))
                 
             }
             
@@ -25,8 +28,8 @@ struct WeekListView: View {
     
 }
 
-struct WeekListView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeekListView().background(.blue)
-    }
-}
+//struct WeekListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WeekListView().background(.blue)
+//    }
+//}

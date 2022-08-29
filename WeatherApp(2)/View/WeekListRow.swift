@@ -9,14 +9,16 @@ import SwiftUI
 
 struct WeekListRow: View {
     
+    @ObservedObject var preview: WeekListRowPreview
+    
     var body: some View {
         
         HStack(spacing: 0) {
             
-            Text("Tuesday")
+            Text(preview.day)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            
+            // TODO: Fix the icon
             Image(systemName: "sun.max")
                 .frame(maxWidth: .infinity, alignment: .center)
             
@@ -24,8 +26,8 @@ struct WeekListRow: View {
             
             HStack {
                 
-                Text("32°")
-                Text("24°")
+                Text(preview.maxTemp)
+                Text(preview.minTemp)
                     .opacity(0.65)
                 
             }
@@ -41,8 +43,8 @@ struct WeekListRow: View {
     }
 }
 
-struct WeekListRow_Previews: PreviewProvider {
-    static var previews: some View {
-        WeekListRow().background(.blue)
-    }
-}
+//struct WeekListRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WeekListRow().background(.blue)
+//    }
+//}

@@ -22,11 +22,11 @@ struct ContentView: View {
                 MainDetailsView(preview: MainDetailPreview(current: currentWeather, currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
                         .padding(.bottom, 30)
 
-                    TimeListView()
+                TimeListView(preview: HourListPreview(currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
                     
-                    WeekListView()
+                    WeekListView(forecastDays: forecastDays)
                     
-                    ExtraDetailsView()
+                    ExtraDetailsView(preview: ExtraDetailsPreview(current: currentWeather, currentDay: forecastDays[0]))
                     
                 }
             .background(
