@@ -13,13 +13,14 @@ struct AddCityHeader: View {
         
         HStack {
             
-            // TODO: Change so when flipping to f doesnt move the date
+            
             
             Image(systemName: "line.3.horizontal")
             Spacer()
             Text("Add A City")
             Spacer()
             Text("+")
+                .font(Font.custom(Constants.MAIN_FONT, size: 28))
             
         }
         .padding()
@@ -32,6 +33,6 @@ struct AddCityHeader: View {
 
 struct AddCityHeader_Previews: PreviewProvider {
     static var previews: some View {
-        AddCityHeader()
+        AddCityHeader().background(.blue)
     }
 }

@@ -15,6 +15,8 @@ struct CitiesMainView: View {
             
             AddCityHeader()
             
+            CitiesGridView()
+            
         }
         .background(
             

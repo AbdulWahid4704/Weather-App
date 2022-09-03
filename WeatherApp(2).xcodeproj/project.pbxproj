@@ -38,6 +38,8 @@
 		EAE5840028BD425000D077DA /* ExtraDetailsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE583FF28BD425000D077DA /* ExtraDetailsPreview.swift */; };
 		EAE5840428BE68D700D077DA /* CitiesMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840328BE68D700D077DA /* CitiesMainView.swift */; };
 		EAE5840628BE6A9700D077DA /* AddCityHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840528BE6A9700D077DA /* AddCityHeader.swift */; };
+		EAE5840A28C3D6BE00D077DA /* CitiesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840928C3D6BE00D077DA /* CitiesGridView.swift */; };
+		EAE5840C28C3D6FE00D077DA /* CityGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840B28C3D6FE00D077DA /* CityGridCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		EAE583FF28BD425000D077DA /* ExtraDetailsPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraDetailsPreview.swift; sourceTree = "<group>"; };
 		EAE5840328BE68D700D077DA /* CitiesMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesMainView.swift; sourceTree = "<group>"; };
 		EAE5840528BE6A9700D077DA /* AddCityHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityHeader.swift; sourceTree = "<group>"; };
+		EAE5840928C3D6BE00D077DA /* CitiesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesGridView.swift; sourceTree = "<group>"; };
+		EAE5840B28C3D6FE00D077DA /* CityGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGridCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,8 @@
 			children = (
 				EAE5840328BE68D700D077DA /* CitiesMainView.swift */,
 				EAE5840528BE6A9700D077DA /* AddCityHeader.swift */,
+				EAE5840928C3D6BE00D077DA /* CitiesGridView.swift */,
+				EAE5840B28C3D6FE00D077DA /* CityGridCell.swift */,
 			);
 			path = "City List Views";
 			sourceTree = "<group>";
@@ -311,7 +317,9 @@
 				EAC6828E28B1680C00FDF652 /* Constants.swift in Sources */,
 				EA0C35E128B949D30098ABC9 /* MainDetailPreview.swift in Sources */,
 				EA12371028B409CA003C3C99 /* CustomDivider.swift in Sources */,
+				EAE5840A28C3D6BE00D077DA /* CitiesGridView.swift in Sources */,
 				EA0C35BB28B6700A0098ABC9 /* CurrentWeather.swift in Sources */,
+				EAE5840C28C3D6FE00D077DA /* CityGridCell.swift in Sources */,
 				EA7A46C228A6BD910069A10D /* WeatherApp_2_App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

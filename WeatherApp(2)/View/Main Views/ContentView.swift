@@ -17,6 +17,7 @@ struct ContentView: View {
             
             ScrollView(showsIndicators: false) {
 
+                // TODO: Pin the header to the top
                 Header(preview: HeaderPreview(currentDay: forecastDays[0]))
 
                 MainDetailsView(preview: MainDetailPreview(current: currentWeather, currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
