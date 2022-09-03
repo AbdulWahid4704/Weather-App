@@ -20,7 +20,7 @@ struct Header: View {
             
             Image(systemName: "line.3.horizontal")
             Spacer()
-            Text(preview.dateString)
+            Text(preview.mainText)
             Spacer()
             Text(weatherModel.isCelsius ? "°C" : "°F")
                 .onTapGesture {

@@ -9,8 +9,10 @@ import Foundation
 
 class HeaderPreview: ObservableObject {
     
-    @Published var dateString = "---, -- ---"
+    @Published var mainText = "---, -- ---"
+    @Published var leftSideSymbol = "--"
     
+    // init for the weather
     init(currentDay: ForecastDay) {
         
         let dateString = currentDay.date
@@ -29,7 +31,17 @@ class HeaderPreview: ObservableObject {
         }()
         let formattedString = d2.string(from: date)
         
-        self.dateString = formattedString
+        // Set the main text and left side symbol
+        self.mainText = formattedString
+        self.leftSideSymbol = "°C"
+        
+    }
+    
+    // Default initializer for anything
+    init(mainText: String, leftSideSymbol: String) {
+        
+        self.mainText = "Add A City"
+        self.leftSideSymbol = "+"
         
     }
     

@@ -36,6 +36,8 @@
 		EAE583FC28BD399100D077DA /* HourListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE583FB28BD399100D077DA /* HourListPreview.swift */; };
 		EAE583FE28BD3F3400D077DA /* WeekListRowPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE583FD28BD3F3400D077DA /* WeekListRowPreview.swift */; };
 		EAE5840028BD425000D077DA /* ExtraDetailsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE583FF28BD425000D077DA /* ExtraDetailsPreview.swift */; };
+		EAE5840428BE68D700D077DA /* CitiesMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840328BE68D700D077DA /* CitiesMainView.swift */; };
+		EAE5840628BE6A9700D077DA /* AddCityHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840528BE6A9700D077DA /* AddCityHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		EAE583FB28BD399100D077DA /* HourListPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourListPreview.swift; sourceTree = "<group>"; };
 		EAE583FD28BD3F3400D077DA /* WeekListRowPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekListRowPreview.swift; sourceTree = "<group>"; };
 		EAE583FF28BD425000D077DA /* ExtraDetailsPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraDetailsPreview.swift; sourceTree = "<group>"; };
+		EAE5840328BE68D700D077DA /* CitiesMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesMainView.swift; sourceTree = "<group>"; };
+		EAE5840528BE6A9700D077DA /* AddCityHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,14 +176,8 @@
 		EAC6828428AACC2900FDF652 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EA7A46C328A6BD910069A10D /* ContentView.swift */,
-				EAC6828228AACC2000FDF652 /* Header.swift */,
-				EAC6828528AACE5B00FDF652 /* MainDetailsView.swift */,
-				EA12370D28B406E5003C3C99 /* TimeListView .swift */,
-				EA12370F28B409CA003C3C99 /* CustomDivider.swift */,
-				EA12371128B4EED8003C3C99 /* WeekListView.swift */,
-				EA12371328B4EF67003C3C99 /* WeekListRow.swift */,
-				EA12371528B52FA7003C3C99 /* ExtraDetailsView.swift */,
+				EAE5840128BE68A800D077DA /* Main Views */,
+				EAE5840228BE68B600D077DA /* City List Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +188,30 @@
 				EAC6828D28B1680C00FDF652 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EAE5840128BE68A800D077DA /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA7A46C328A6BD910069A10D /* ContentView.swift */,
+				EAC6828228AACC2000FDF652 /* Header.swift */,
+				EAC6828528AACE5B00FDF652 /* MainDetailsView.swift */,
+				EA12370D28B406E5003C3C99 /* TimeListView .swift */,
+				EA12370F28B409CA003C3C99 /* CustomDivider.swift */,
+				EA12371128B4EED8003C3C99 /* WeekListView.swift */,
+				EA12371328B4EF67003C3C99 /* WeekListRow.swift */,
+				EA12371528B52FA7003C3C99 /* ExtraDetailsView.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		EAE5840228BE68B600D077DA /* City List Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAE5840328BE68D700D077DA /* CitiesMainView.swift */,
+				EAE5840528BE6A9700D077DA /* AddCityHeader.swift */,
+			);
+			path = "City List Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +290,7 @@
 				EA12371428B4EF67003C3C99 /* WeekListRow.swift in Sources */,
 				EA12370E28B406E5003C3C99 /* TimeListView .swift in Sources */,
 				EA0C35C328B777E60098ABC9 /* Hour.swift in Sources */,
+				EAE5840628BE6A9700D077DA /* AddCityHeader.swift in Sources */,
 				EA0C35DF28B925370098ABC9 /* HeaderPreview.swift in Sources */,
 				EA7A46C428A6BD910069A10D /* ContentView.swift in Sources */,
 				EA0C35DB28B7E2630098ABC9 /* Api Service.swift in Sources */,
@@ -278,6 +301,7 @@
 				EAC6828828AACFEE00FDF652 /* Colors.swift in Sources */,
 				EA0C35D428B7CADB0098ABC9 /* Condition.swift in Sources */,
 				EA0C35D728B7E1020098ABC9 /* WeatherModel.swift in Sources */,
+				EAE5840428BE68D700D077DA /* CitiesMainView.swift in Sources */,
 				EAC6828328AACC2100FDF652 /* Header.swift in Sources */,
 				EA0C35BF28B775820098ABC9 /* ForecastDay.swift in Sources */,
 				EA0C35C128B777A30098ABC9 /* Day.swift in Sources */,
