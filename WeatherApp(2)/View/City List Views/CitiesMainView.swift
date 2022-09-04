@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CitiesMainView: View {
+    
+    @EnvironmentObject var weatherModel: WeatherModel
+    
     var body: some View {
         
         ScrollView(showsIndicators: false) {
@@ -28,8 +31,8 @@ struct CitiesMainView: View {
     }
 }
 
-struct CitiesMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        CitiesMainView().background(.blue)
-    }
-}
+//struct CitiesMainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CitiesMainView().background(.blue)
+//    }
+//}

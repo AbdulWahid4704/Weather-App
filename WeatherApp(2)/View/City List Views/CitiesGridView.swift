@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CitiesGridView: View {
+    
+    
+    
     var body: some View {
         
         let gridItem = GridItem(.flexible(minimum: 100, maximum: 200), spacing: 30)
