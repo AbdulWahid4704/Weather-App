@@ -19,7 +19,8 @@ struct WeatherApp_2_App: App {
 //            ContentView()
 //                .environmentObject(WeatherModel())
             
-            CitiesMainView()
+            CitiesMainView().environmentObject(WeatherModel())
         }
     }
 }
+

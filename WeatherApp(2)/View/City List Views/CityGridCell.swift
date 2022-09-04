@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CityGridCell: View {
     
+    @ObservedObject var preview: CityGridCellPreview
+    
     var body: some View {
         
         ZStack {
@@ -17,20 +19,27 @@ struct CityGridCell: View {
                 .foregroundColor(.white)
                 .opacity(0.2)
             
+            // TODO: Fix the icon
             VStack(alignment: .leading,spacing: 0) {
+                
                 HStack {
-                    Text("28°")
+                    Text(preview.temp)
                     Spacer()
                     Image(systemName: "sun.max")
                 }
+                
                 Spacer()
-                Text("Dubai")
+                
+                Text(preview.city)
                     .padding(.bottom, 5)
                     
-                Text("United Arab Emirates")
+                Text(preview.country)
                     .font(.custom(Constants.MAIN_FONT_LIGHT, size: 12))
-                Text("(CurrentLocation)")
-                    .font(.custom(Constants.MAIN_FONT_LIGHT, size: 10))
+                
+                if preview.isCurrentLocation {
+                    Text("(CurrentLocation)")
+                        .font(.custom(Constants.MAIN_FONT_LIGHT, size: 10))
+                }
                 
             }
             .padding(20)
@@ -42,8 +51,8 @@ struct CityGridCell: View {
     }
 }
 
-struct CityGridCell_Previews: PreviewProvider {
-    static var previews: some View {
-        CityGridCell().background(.blue)
-    }
-}
+//struct CityGridCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CityGridCell().background(.blue)
+//    }
+//}

@@ -14,9 +14,34 @@ class CityGridCellPreview: ObservableObject {
     @Published var country = "------"
     @Published var isCurrentLocation = false
     
-    init() {
+    init(city: String, isCelsius: Bool, isCurrentLocation: Bool) {
         
+        self.city = city
+        self.isCurrentLocation = isCurrentLocation
         
+        getDataForCity(city, isCelsius: isCelsius)
+        
+    }
+    
+    func getDataForCity(_ city: String, isCelsius: Bool) {
+        
+        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=\(city)&days=3&aqi=no&alerts=no")
+        
+        apiService.getJSON { (result: Result<WeatherRequest, APIError>) in
+            
+            switch result {
+            case .success(let request):
+                
+                DispatchQueue.main.async {
+                    self.country = request.location.country
+                    self.temp = isCelsius ? "\(Int(request.current.tempC))°" : "\(Int(request.current.tempF))°"
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
         
     }
     

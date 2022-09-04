@@ -15,6 +15,12 @@ class WeatherModel: ObservableObject {
     
     @Published var isCelsius = true
     
+    @Published var listOfCities = [String]()
+    
+    init() {
+        getSavedCities()
+    }
+    
     func getData() {
         
         // TODO: Customize the url according to spec
@@ -34,6 +40,14 @@ class WeatherModel: ObservableObject {
             
         }
 
+        
+    }
+    
+    func getSavedCities() {
+        
+        if let cities = UserDefaults.standard.array(forKey: Constants.CITIES_LISTS_KEY) as? [String] {
+            listOfCities = cities
+        }
         
     }
     

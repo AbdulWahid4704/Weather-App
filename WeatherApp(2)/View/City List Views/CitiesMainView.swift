@@ -18,7 +18,7 @@ struct CitiesMainView: View {
             
             AddCityHeader()
             
-            CitiesGridView()
+            CitiesGridView(cities: weatherModel.listOfCities)
             
         }
         .background(

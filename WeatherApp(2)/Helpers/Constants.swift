@@ -13,4 +13,6 @@ struct Constants {
     static let MAIN_FONT = "GillSans"
     static let MAIN_FONT_LIGHT = "GillSans-Light"
     
+    static let CITIES_LISTS_KEY = "citiesList"
+    
 }

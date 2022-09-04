@@ -9,14 +9,17 @@ import SwiftUI
 
 struct CitiesGridView: View {
     
-    
+    let cities: [String]
+    @EnvironmentObject var weatherModel: WeatherModel
     
     var body: some View {
         
         let gridItem = GridItem(.flexible(minimum: 100, maximum: 200), spacing: 30)
         LazyVGrid(columns: [gridItem, gridItem], spacing: 30) {
-            ForEach(0 ..< 5) { item in
-                CityGridCell()
+            ForEach(cities, id: \.self) { city in
+    
+                // TODO: Fix the currentLocation
+                CityGridCell(preview: CityGridCellPreview(city: city, isCelsius: weatherModel.isCelsius, isCurrentLocation: true))
             }
             
             
@@ -25,9 +28,9 @@ struct CitiesGridView: View {
         
     }
 }
-
-struct CitiesGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        CitiesGridView().background(.blue)
-    }
-}
+//
+//struct CitiesGridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CitiesGridView().background(.blue)
+//    }
+//}

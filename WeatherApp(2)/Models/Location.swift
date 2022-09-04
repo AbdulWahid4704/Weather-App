@@ -12,6 +12,7 @@ struct Location: Decodable, Identifiable {
     var id: UUID? = UUID()
     
     var name: String
+    var country: String
     
     
 }
