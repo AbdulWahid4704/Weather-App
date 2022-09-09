@@ -19,7 +19,7 @@ struct CitiesGridView: View {
             ForEach(cities, id: \.self) { city in
     
                 // TODO: Fix the currentLocation
-                CityGridCell(preview: CityGridCellPreview(city: city, isCelsius: weatherModel.isCelsius, isCurrentLocation: true))
+                CityGridCell(preview: CityGridCellPreview(city: city, isCelsius: weatherModel.isCelsius, isCurrentLocation: false))
             }
             
             

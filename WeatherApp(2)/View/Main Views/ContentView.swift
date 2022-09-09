@@ -13,36 +13,46 @@ struct ContentView: View {
     
     var body: some View {
 
-        if let currentWeather = weatherModel.currentWeather, let forecastDays = weatherModel.forecastDays {
+        if weatherModel.isInMainView {
             
-            ScrollView(showsIndicators: false) {
-
-                // TODO: Pin the header to the top
-                Header(preview: HeaderPreview(currentDay: forecastDays[0]))
-
-                MainDetailsView(preview: MainDetailPreview(current: currentWeather, currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
-                        .padding(.bottom, 30)
-
-                TimeListView(preview: HourListPreview(currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
-                    
-                    WeekListView(forecastDays: forecastDays)
-                    
-                    ExtraDetailsView(preview: ExtraDetailsPreview(current: currentWeather, currentDay: forecastDays[0]))
-                    
-                }
-            .background(
+            // MARK: Show Main View
+            if let currentWeather = weatherModel.currentWeather, let forecastDays = weatherModel.forecastDays {
                 
-                // Background Gradient
-                LinearGradient(colors: [.BLUE_GRADIENT_TOP, .BLUE_GRADIENT_BOTTOM], startPoint: .top, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all)
-            )
-            
+                ScrollView(showsIndicators: false) {
+
+                    // TODO: Pin the header to the top
+                    Header(preview: HeaderPreview(currentDay: forecastDays[0]))
+
+                    MainDetailsView(preview: MainDetailPreview(current: currentWeather, currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
+                            .padding(.bottom, 30)
+
+                    TimeListView(preview: HourListPreview(currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
+                        
+                        WeekListView(forecastDays: forecastDays)
+                        
+                        ExtraDetailsView(preview: ExtraDetailsPreview(current: currentWeather, currentDay: forecastDays[0]))
+                        
+                    }
+                .background(
+                    
+                    // Background Gradient
+                    LinearGradient(colors: [.BLUE_GRADIENT_TOP, .BLUE_GRADIENT_BOTTOM], startPoint: .top, endPoint: .bottom)
+                        .edgesIgnoringSafeArea(.all)
+                )
+                
+            } else {
+                
+                Text("Error no weather")
+                    .onAppear{
+                        weatherModel.getData()
+                    }
+                
+            }
         } else {
             
-            Text("Error no weather")
-                .onAppear{
-                    weatherModel.getData()
-                }
+            // MARK: Show city List View
+            
+            CitiesMainView()
             
         }
         

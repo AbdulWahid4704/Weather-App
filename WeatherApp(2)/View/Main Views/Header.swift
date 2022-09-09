@@ -19,6 +19,9 @@ struct Header: View {
             // TODO: Change so when flipping to f doesnt move the date
             
             Image(systemName: "line.3.horizontal")
+                .onTapGesture {
+                    weatherModel.isInMainView.toggle()
+                }
             Spacer()
             Text(preview.mainText)
             Spacer()

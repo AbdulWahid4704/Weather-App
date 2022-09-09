@@ -10,16 +10,13 @@ import SwiftUI
 @main
 struct WeatherApp_2_App: App {
     
-    init() {
-        
-    }
     
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .environmentObject(WeatherModel())
             
-            CitiesMainView().environmentObject(WeatherModel())
+            ContentView()
+                .environmentObject(WeatherModel())
+            
         }
     }
 }

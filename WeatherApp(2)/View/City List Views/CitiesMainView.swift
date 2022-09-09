@@ -11,12 +11,14 @@ struct CitiesMainView: View {
     
     @EnvironmentObject var weatherModel: WeatherModel
     
+    @State var isAddingCity = false
+    
     var body: some View {
         
         ScrollView(showsIndicators: false) {
             
             
-            AddCityHeader()
+            AddCityHeader(isAddingCity: $isAddingCity)
             
             CitiesGridView(cities: weatherModel.listOfCities)
             
@@ -25,8 +27,18 @@ struct CitiesMainView: View {
             
             // Background Gradient
             LinearGradient(colors: [.BLUE_GRADIENT_TOP, .BLUE_GRADIENT_BOTTOM], startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
+                //.edgesIgnoringSafeArea(.all)
+                .padding(-50)
         )
+        .blur(radius: isAddingCity ? 3 : 0 , opaque: false)
+        .overlay {
+            
+            if isAddingCity {
+                
+                AddACityView(isAddingCity: $isAddingCity)
+                
+            }
+        }
         
     }
 }

@@ -16,7 +16,6 @@ class CityGridCellPreview: ObservableObject {
     
     init(city: String, isCelsius: Bool, isCurrentLocation: Bool) {
         
-        self.city = city
         self.isCurrentLocation = isCurrentLocation
         
         getDataForCity(city, isCelsius: isCelsius)
@@ -35,10 +34,13 @@ class CityGridCellPreview: ObservableObject {
                 DispatchQueue.main.async {
                     self.country = request.location.country
                     self.temp = isCelsius ? "\(Int(request.current.tempC))°" : "\(Int(request.current.tempF))°"
+                    self.city = request.location.name
                 }
                 
             case .failure(let error):
                 print(error)
+                
+                
             }
             
         }

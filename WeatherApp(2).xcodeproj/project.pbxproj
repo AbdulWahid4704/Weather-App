@@ -41,6 +41,7 @@
 		EAE5840A28C3D6BE00D077DA /* CitiesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840928C3D6BE00D077DA /* CitiesGridView.swift */; };
 		EAE5840C28C3D6FE00D077DA /* CityGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840B28C3D6FE00D077DA /* CityGridCell.swift */; };
 		EAE5841028C4C69000D077DA /* CityGridCellPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5840F28C4C69000D077DA /* CityGridCellPreview.swift */; };
+		EAE5841228C60EC700D077DA /* AddACityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5841128C60EC700D077DA /* AddACityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		EAE5840928C3D6BE00D077DA /* CitiesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesGridView.swift; sourceTree = "<group>"; };
 		EAE5840B28C3D6FE00D077DA /* CityGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGridCell.swift; sourceTree = "<group>"; };
 		EAE5840F28C4C69000D077DA /* CityGridCellPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGridCellPreview.swift; sourceTree = "<group>"; };
+		EAE5841128C60EC700D077DA /* AddACityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddACityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				EAE5840528BE6A9700D077DA /* AddCityHeader.swift */,
 				EAE5840928C3D6BE00D077DA /* CitiesGridView.swift */,
 				EAE5840B28C3D6FE00D077DA /* CityGridCell.swift */,
+				EAE5841128C60EC700D077DA /* AddACityView.swift */,
 			);
 			path = "City List Views";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				EA0C35BF28B775820098ABC9 /* ForecastDay.swift in Sources */,
 				EA0C35C128B777A30098ABC9 /* Day.swift in Sources */,
 				EAE5841028C4C69000D077DA /* CityGridCellPreview.swift in Sources */,
+				EAE5841228C60EC700D077DA /* AddACityView.swift in Sources */,
 				EA0C35BD28B774A90098ABC9 /* Forecast.swift in Sources */,
 				EAC6828628AACE5B00FDF652 /* MainDetailsView.swift in Sources */,
 				EA0C35C928B778740098ABC9 /* Location.swift in Sources */,
