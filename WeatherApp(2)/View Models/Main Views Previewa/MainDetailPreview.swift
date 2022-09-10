@@ -13,14 +13,18 @@ class MainDetailPreview: ObservableObject {
     @Published var highLow = "▲ --° ▼ --°"
     @Published var conditionText = "------"
     @Published var feelsLike = "feels like --°"
+    @Published var city = "------"
     
-    init(current: CurrentWeather, currentDay: ForecastDay, isCelsius: Bool) {
+    init(current: CurrentWeather, currentDay: ForecastDay, isCelsius: Bool, currentCity: String) {
         
-        displayUI(current: current, currentDay: currentDay, isCelsius: isCelsius)
+        displayUI(current: current, currentDay: currentDay, isCelsius: isCelsius, currentCity: currentCity)
         
     }
     
-    func displayUI(current: CurrentWeather, currentDay: ForecastDay, isCelsius: Bool) {
+    func displayUI(current: CurrentWeather, currentDay: ForecastDay, isCelsius: Bool, currentCity: String) {
+        
+        // Display the city
+        city = currentCity
         
         // Display the temp
         self.temp = isCelsius ? "\(Int(current.tempC))°" : "\(Int(current.tempF))°"

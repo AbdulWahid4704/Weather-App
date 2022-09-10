@@ -21,7 +21,7 @@ struct MainDetailsView: View {
             // TODO: Fix the preview of location
                 
                 // City
-                Text("Dubai")
+                Text(preview.city)
                     .font(Font.custom(Constants.MAIN_FONT, size: 24))
                     .padding(.bottom, 10)
                 

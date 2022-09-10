@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeekListView: View {
     
-    @State var forecastDays: [ForecastDay]
+    var forecastDays: [ForecastDay]
     @EnvironmentObject var weatherModel: WeatherModel
     
     var body: some View {

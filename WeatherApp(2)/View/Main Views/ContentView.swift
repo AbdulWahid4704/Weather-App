@@ -12,27 +12,27 @@ struct ContentView: View {
     @EnvironmentObject var weatherModel: WeatherModel
     
     var body: some View {
-
+        
         if weatherModel.isInMainView {
             
             // MARK: Show Main View
             if let currentWeather = weatherModel.currentWeather, let forecastDays = weatherModel.forecastDays {
                 
                 ScrollView(showsIndicators: false) {
-
+                    
                     // TODO: Pin the header to the top
                     Header(preview: HeaderPreview(currentDay: forecastDays[0]))
-
-                    MainDetailsView(preview: MainDetailPreview(current: currentWeather, currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
-                            .padding(.bottom, 30)
-
+                    
+                    MainDetailsView(preview: MainDetailPreview(current: currentWeather, currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius, currentCity: weatherModel.currentCity))
+                        .padding(.bottom, 30)
+                    
                     TimeListView(preview: HourListPreview(currentDay: forecastDays[0], isCelsius: weatherModel.isCelsius))
-                        
-                        WeekListView(forecastDays: forecastDays)
-                        
-                        ExtraDetailsView(preview: ExtraDetailsPreview(current: currentWeather, currentDay: forecastDays[0]))
-                        
-                    }
+                    
+                    WeekListView(forecastDays: forecastDays)
+                    
+                    ExtraDetailsView(preview: ExtraDetailsPreview(current: currentWeather, currentDay: forecastDays[0]))
+                    
+                }
                 .background(
                     
                     // Background Gradient

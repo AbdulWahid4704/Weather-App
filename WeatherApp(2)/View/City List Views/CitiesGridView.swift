@@ -20,6 +20,10 @@ struct CitiesGridView: View {
     
                 // TODO: Fix the currentLocation
                 CityGridCell(preview: CityGridCellPreview(city: city, isCelsius: weatherModel.isCelsius, isCurrentLocation: false))
+                    .onTapGesture {
+                        weatherModel.setCurrentCity(city)
+                        weatherModel.isInMainView = true
+                    }
             }
             
             

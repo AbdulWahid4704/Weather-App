@@ -15,18 +15,20 @@ class WeatherModel: ObservableObject {
     
     @Published var isCelsius = true
     
+    @Published var currentCity = "Dubai"
+    
     @Published var listOfCities = [String]()
     
     @Published var isInMainView = true
     
     init() {
-        getSavedCities()
+        getSavedCitiesAndCurrentCity()
     }
     
     func getData() {
         
         // TODO: Customize the url according to spec
-        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=Dubai&days=3&aqi=no&alerts=no")
+        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=\(currentCity)&days=3&aqi=no&alerts=no")
         
             apiService.getJSON { (result: Result<WeatherRequest, APIError>) in
             
@@ -45,10 +47,13 @@ class WeatherModel: ObservableObject {
         
     }
     
-    func getSavedCities() {
+    func getSavedCitiesAndCurrentCity() {
         
         if let cities = UserDefaults.standard.array(forKey: Constants.CITIES_LISTS_KEY) as? [String] {
             listOfCities = cities
+        }
+        if let currentCity = UserDefaults.standard.string(forKey: Constants.CURRENT_CITY_KEY) {
+            self.currentCity = currentCity
         }
         
     }
@@ -61,6 +66,16 @@ class WeatherModel: ObservableObject {
             
             UserDefaults.standard.set(listOfCities, forKey: Constants.CITIES_LISTS_KEY)
         }
+        
+    }
+    
+    func setCurrentCity(_ city: String) {
+        
+        currentCity = city
+        
+        getData()
+        
+        UserDefaults.standard.set(city, forKey: Constants.CURRENT_CITY_KEY)
         
     }
     

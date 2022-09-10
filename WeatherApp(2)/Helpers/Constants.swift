@@ -15,4 +15,6 @@ struct Constants {
     
     static let CITIES_LISTS_KEY = "citiesList"
     
+    static let CURRENT_CITY_KEY = "currentCity"
+    
 }
