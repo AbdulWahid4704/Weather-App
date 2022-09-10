@@ -10,7 +10,7 @@ import SwiftUI
 struct Header: View {
     
     @EnvironmentObject var weatherModel: WeatherModel
-    @StateObject var preview: HeaderPreview
+    @ObservedObject var preview: HeaderPreview
     
     var body: some View {
         

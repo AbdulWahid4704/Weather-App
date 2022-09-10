@@ -10,6 +10,9 @@ import SwiftUI
 @main
 struct WeatherApp_2_App: App {
     
+//    init() {
+//        UserDefaults.standard.set(["Dubai", "London"], forKey: Constants.CITIES_LISTS_KEY)
+//    }
     
     var body: some Scene {
         WindowGroup {

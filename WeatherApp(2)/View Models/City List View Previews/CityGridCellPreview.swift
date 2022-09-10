@@ -24,7 +24,8 @@ class CityGridCellPreview: ObservableObject {
     
     func getDataForCity(_ city: String, isCelsius: Bool) {
         
-        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=\(city)&days=3&aqi=no&alerts=no")
+        // TODO: Fix Airport codes
+        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=\(city.validateStringForSpace())&days=3&aqi=no&alerts=no")
         
         apiService.getJSON { (result: Result<WeatherRequest, APIError>) in
             

@@ -64,14 +64,12 @@ struct AddACityView: View {
                             
                             // TODO: Make sure to filter countries aswell as cities
                             // Update the view model about the change if the city is validated
-                            weatherModel.validateCity(textFieldInput.trimmingCharacters(in: .whitespacesAndNewlines)) { validated in
+                            weatherModel.updateCity(textFieldInput.trimmingCharacters(in: .whitespacesAndNewlines)) { validated in
                                 if validated {
                                     DispatchQueue.main.async {
                                         self.showError = false
                                         
                                         self.isAddingCity.toggle()
-                                        
-                                        self.weatherModel.updateCity(textFieldInput.trimmingCharacters(in: .whitespacesAndNewlines))
                                     }
                                     
                                 } else {

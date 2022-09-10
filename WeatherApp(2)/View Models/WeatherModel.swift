@@ -28,7 +28,7 @@ class WeatherModel: ObservableObject {
     func getData() {
         
         // TODO: Customize the url according to spec
-        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=\(currentCity)&days=3&aqi=no&alerts=no")
+        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=\(currentCity.validateStringForSpace())&days=3&aqi=no&alerts=no")
         
             apiService.getJSON { (result: Result<WeatherRequest, APIError>) in
             
@@ -58,13 +58,40 @@ class WeatherModel: ObservableObject {
         
     }
     
-    func updateCity(_ city: String) {
+    func updateCity(_ city: String, completion: @escaping (Bool) -> Void) {
         
-        if !listOfCities.contains(city) {
+        print(city.validateStringForSpace())
+        
+        // Validate the city by calling the api
+        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=\(city.validateStringForSpace())&days=3&aqi=no&alerts=no")
+        
+            apiService.getJSON { (result: Result<WeatherRequest, APIError>) in
             
-            listOfCities.append(city)
+            switch result {
+            case .success(let result):
+                
+                // If it returns true pass it back to the view
+                completion(true)
+                
+                // Take the city from the response so as to make sure its not the country
+                let city = result.location.name
+                
+                // Make sure it doesnt exist already to avoid repetition
+                if !self.listOfCities.contains(city) {
+                    
+                    DispatchQueue.main.async {
+                        self.listOfCities.append(city)
+                        
+                        UserDefaults.standard.set(self.listOfCities, forKey: Constants.CITIES_LISTS_KEY)
+                        print(self.listOfCities)
+                        
+                    }
+                }
+                
+            default:
+                completion(false)
+            }
             
-            UserDefaults.standard.set(listOfCities, forKey: Constants.CITIES_LISTS_KEY)
         }
         
     }
@@ -79,22 +106,6 @@ class WeatherModel: ObservableObject {
         
     }
     
-    func validateCity(_ city: String, completion: @escaping (Bool) -> Void) {
-        
-        let apiService = APIService(urlString: "http://api.weatherapi.com/v1/forecast.json?key=892ae7ab162c41f0926111722222102&q=\(city)&days=3&aqi=no&alerts=no")
-        
-            apiService.getJSON { (result: Result<WeatherRequest, APIError>) in
-            
-            switch result {
-            case .success:
-                completion(true)
-            default:
-                completion(false)
-            }
-            
-        }
-        
-        
-    }
+    
     
 }
