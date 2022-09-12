@@ -30,6 +30,7 @@
 		EA7A46C628A6BD960069A10D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7A46C528A6BD960069A10D /* Assets.xcassets */; };
 		EA7A46C928A6BD960069A10D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7A46C828A6BD960069A10D /* Preview Assets.xcassets */; };
 		EAB4595B28CD15FC0045A065 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4595A28CD15FC0045A065 /* String.swift */; };
+		EAB4595D28CE67CA0045A065 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4595C28CE67CA0045A065 /* LocationService.swift */; };
 		EAC6828328AACC2100FDF652 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6828228AACC2000FDF652 /* Header.swift */; };
 		EAC6828628AACE5B00FDF652 /* MainDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6828528AACE5B00FDF652 /* MainDetailsView.swift */; };
 		EAC6828828AACFEE00FDF652 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6828728AACFEE00FDF652 /* Colors.swift */; };
@@ -70,6 +71,7 @@
 		EA7A46C528A6BD960069A10D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA7A46C828A6BD960069A10D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EAB4595A28CD15FC0045A065 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EAB4595C28CE67CA0045A065 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		EAC6828228AACC2000FDF652 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		EAC6828528AACE5B00FDF652 /* MainDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailsView.swift; sourceTree = "<group>"; };
 		EAC6828728AACFEE00FDF652 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				EA0C35DA28B7E2620098ABC9 /* Api Service.swift */,
+				EAB4595C28CE67CA0045A065 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				EA12370E28B406E5003C3C99 /* TimeListView .swift in Sources */,
 				EA0C35C328B777E60098ABC9 /* Hour.swift in Sources */,
 				EAE5840628BE6A9700D077DA /* AddCityHeader.swift in Sources */,
+				EAB4595D28CE67CA0045A065 /* LocationService.swift in Sources */,
 				EA0C35DF28B925370098ABC9 /* HeaderPreview.swift in Sources */,
 				EA7A46C428A6BD910069A10D /* ContentView.swift in Sources */,
 				EA0C35DB28B7E2630098ABC9 /* Api Service.swift in Sources */,
@@ -481,6 +485,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WeatherApp-2--Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Grant permission so we can show Your city";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,6 +516,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WeatherApp-2--Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Grant permission so we can show Your city";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

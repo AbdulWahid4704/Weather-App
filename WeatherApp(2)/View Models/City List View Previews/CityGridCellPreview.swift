@@ -7,18 +7,37 @@
 
 import Foundation
 
-class CityGridCellPreview: ObservableObject {
+class CityGridCellPreview: ObservableObject, LocationServiceDelegate {
     
     @Published var temp = "--°"
     @Published var city = "------"
     @Published var country = "------"
     @Published var isCurrentLocation = false
     
+    var locationService = LocationService()
+    
+    var isCelsius = true
+    
     init(city: String, isCelsius: Bool, isCurrentLocation: Bool) {
         
-        self.isCurrentLocation = isCurrentLocation
+        self.locationService.delegate = self
         
-        getDataForCity(city, isCelsius: isCelsius)
+        self.isCurrentLocation = isCurrentLocation
+        self.isCelsius = isCelsius
+        
+        if isCurrentLocation {
+            
+            getCurrentLocationData()
+        } else {
+            
+            getDataForCity(city, isCelsius: isCelsius)
+        }
+        
+    }
+    
+    func getCurrentLocationData() {
+        
+        locationService.requestGeolocationPermission()
         
     }
     
@@ -46,6 +65,17 @@ class CityGridCellPreview: ObservableObject {
             
         }
         
+    }
+    
+    func didGetCity(_ city: String?) {
+        
+        if isCurrentLocation {
+            if let city = city {
+                
+                getDataForCity(city, isCelsius: self.isCelsius)
+                
+            }
+        }
     }
     
 }

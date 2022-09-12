@@ -16,14 +16,19 @@ struct CitiesGridView: View {
         
         let gridItem = GridItem(.flexible(minimum: 100, maximum: 200), spacing: 30)
         LazyVGrid(columns: [gridItem, gridItem], spacing: 30) {
-            ForEach(cities, id: \.self) { city in
+            ForEach(0...cities.count, id: \.self) { index in
     
-                // TODO: Fix the currentLocation
-                CityGridCell(preview: CityGridCellPreview(city: city, isCelsius: weatherModel.isCelsius, isCurrentLocation: false))
-                    .onTapGesture {
-                        weatherModel.setCurrentCity(city)
-                        weatherModel.isInMainView = true
-                    }
+                if index == 0 {
+                    CityGridCell(preview: CityGridCellPreview(city: "", isCelsius: weatherModel.isCelsius, isCurrentLocation: true))
+                } else {
+                    
+                    CityGridCell(preview: CityGridCellPreview(city: cities[index - 1], isCelsius: weatherModel.isCelsius, isCurrentLocation: false))
+//                        .onTapGesture {
+//                            weatherModel.setCurrentCity(cities[index - 1])
+//                            weatherModel.isInMainView = true
+//                        }
+                }
+                
             }
             
             

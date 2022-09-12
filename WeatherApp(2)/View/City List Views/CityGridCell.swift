@@ -10,9 +10,11 @@ import SwiftUI
 struct CityGridCell: View {
     
     @ObservedObject var preview: CityGridCellPreview
+    @EnvironmentObject var weatherModel: WeatherModel
     
     var body: some View {
         
+        // TODO: Allow the user to delete a city
         ZStack {
             
             RoundedRectangle(cornerRadius: 10)
@@ -47,6 +49,10 @@ struct CityGridCell: View {
             .foregroundColor(.white)
         }
         .frame(height: 150)
+        .onTapGesture {
+            weatherModel.setCurrentCity(preview.city)
+            weatherModel.isInMainView = true
+        }
         
     }
 }
