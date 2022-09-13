@@ -19,28 +19,39 @@ struct TimeListView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 
-                HStack(spacing: 35) {
+                ScrollViewReader { scrollView in
                     
-                    // TODO: Scroll to make the current hour appear first
-                    
-                    // Convert the dict into an array of hour,temp tuple values so it becomes ordered
-                    ForEach(preview.hourTempDict.sorted(by: >), id: \.key) { (hour, temp) in
+                    HStack(spacing: 35) {
                         
-                        VStack(spacing: 10) {
+                        // TODO: Scroll to make the current hour appear first
+                        
+                        // Convert the dict into an array of hour,temp tuple values so it becomes ordered
+                        ForEach(preview.hourTempArray, id: \.time) { display in
                             
-                            Text(hour)
-                                .font(.custom(Constants.MAIN_FONT_LIGHT, size: 12))
-                            
-                            Text(temp)
-                                .font(.custom(Constants.MAIN_FONT, size: 18))
-                            
+                            VStack(spacing: 10) {
+                                
+                                Text(display.time)
+                                    .font(.custom(Constants.MAIN_FONT_LIGHT, size: 12))
+                                
+                                Text(display.temp)
+                                    .font(.custom(Constants.MAIN_FONT, size: 18))
+                                
+                                
+                            }
+                            .foregroundColor(.white)
                             
                         }
-                        .foregroundColor(.white)
                         
+                    }
+                    .onAppear {
+                        withAnimation {
+                            scrollView.scrollTo(preview.getCurrentTime(), anchor: .leading)
+                        }
                     }
                     
                 }
+                
+                
             }.padding()
             
             CustomDivider()

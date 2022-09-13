@@ -9,7 +9,7 @@ import Foundation
 
 class HourListPreview: ObservableObject {
     
-    @Published var hourTempDict: [String: String] = ["----": "--°"]
+    @Published var hourTempArray: [HourTempDisplay] = []
     
     let stringToDateDF: DateFormatter = {
         let d = DateFormatter()
@@ -21,7 +21,7 @@ class HourListPreview: ObservableObject {
         let d = DateFormatter()
         d.amSymbol = "am"
         d.pmSymbol = "pm"
-        d.dateFormat = "H a"
+        d.dateFormat = "h a"
         return d
     }()
     
@@ -42,10 +42,26 @@ class HourListPreview: ObservableObject {
             
             let temperature = isCelsius ? "\(Int(hour.tempC))°" : "\(Int(hour.tempF))°"
             
-            // Populate the dict
-            hourTempDict[displayTime] = temperature
+            print(displayTime)
+            print("-" + temperature)
+            
+            // Create the display object
+            hourTempArray.append(HourTempDisplay(time: displayTime, temp: temperature))
             
         }
         
     }
+    
+    func getCurrentTime() -> String {
+        
+        displayDF.string(from: Date())
+        
+    }
+}
+
+struct HourTempDisplay {
+    
+    var time: String
+    var temp: String
+    
 }
